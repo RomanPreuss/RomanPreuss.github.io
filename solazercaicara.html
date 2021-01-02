@@ -1,0 +1,534 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="tailwind.css" rel="stylesheet">
+</head>
+
+<!-- 
+    Main colors:
+    steel-600: 60, 104, 145 #3c6891
+
+    steel-900: 20, 53, 84 #143554
+
+    cerulean-300: 170, 222, 238 #aadeee
+
+    sunglow-300: 236, 214, 89 #ecd659
+
+    carrot-500: 228, 162, 74 #e4a14a
+
+
+    cerise-300: 231, 174, 205 #e7aecd
+ -->
+
+<body>
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div>
+        <nav class="bg-steel-600">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <!-- Heroicon name: home -->
+                            <svg class="text-white h-6 w-6" mlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="#"
+                                    class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 px-3 py-2 rounded-sm text-sm font-medium">Infos
+                                    zum Haus</a>
+                                <a href="#"
+                                    class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 px-3 py-2 rounded-sm text-sm font-medium">Eindrücke</a>
+                                <a href="#"
+                                    class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 px-3 py-2 rounded-sm text-sm font-medium">Umgebung</a>
+                                <a href="#"
+                                    class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 px-3 py-2 rounded-sm text-sm font-medium">Kontakt</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="-mr-2 flex md:hidden">
+                        <!-- Mobile menu button -->
+                        <button
+                            class="bg-steel-600 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-steel-700 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-offset-steel-700"
+                            onclick="toggleNavbar('.menu')">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="menu block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg class="menu hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#"
+                        class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 block px-3 py-2 rounded-md text-base font-medium">Infos
+                        zum Haus</a>
+                    <a href="#"
+                        class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 block px-3 py-2 rounded-md text-base font-medium">Eindrücke</a>
+                    <a href="#"
+                        class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 block px-3 py-2 rounded-md text-base font-medium">Umgebung</a>
+                    <a href="#"
+                        class="text-steel-50 hover:bg-steel-200 hover:text-steel-600 block px-3 py-2 rounded-md text-base font-medium">Kontakt</a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+                <div class="absolute top-0 w-full h-full bg-center bg-cover"
+                    style='background-image: url("assets/start.jpg");'>
+                    <span id="blackOverlay" class="w-full h-full absolute opacity-25 bg-black"></span>
+                </div>
+                <div class="container relative mx-auto">
+                    <div class="items-center flex flex-wrap">
+                        <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                            <div class="pr-12">
+                                <h1 class="text-white font-semibold text-5xl">
+                                    Só Lazer Caiçara
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+                    style="height: 70px; transform: translateZ(0px);">
+                    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                        <polygon class="text-steel-600 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    </svg>
+                </div>
+            </div>
+            <section class="pb-20 bg-steel-600 -mt-24">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-wrap">
+                        <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                            <div
+                                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                                <div class="px-4 py-5 flex-auto">
+                                    <div
+                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-sunglow-300">
+                                        <!-- Heroicon name: home -->
+                                        <svg class="h-6 w-6" mlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="text-xl font-semibold">Infos zum Haus</h6>
+                                    <p class="mt-2 mb-4 text-gray-600">
+                                        Auf rund 90 m2 bietet das Ferienhaus alles was man für einen erholsamen Urlaub
+                                        benötigt.
+                                    </p>
+                                    <button
+                                        class="text-gray-600 bg-transparent border border-solid border-steel-600 hover:bg-steel-600 hover:text-white active:bg-steel-700 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
+                                        type="button" style="transition: all .15s ease">
+                                        Mehr erfahren
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-4/12 px-4 text-center">
+                            <div
+                                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                                <div class="px-4 py-5 flex-auto">
+                                    <div
+                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-steel-300">
+                                        <!-- Heroicon name: camera -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="text-xl font-semibold">Eindrücke</h6>
+                                    <p class="mt-2 mb-4 text-gray-600">
+                                        Bilder sagen mehr als Worte.
+                                    </p>
+                                    <button
+                                        class="text-gray-600 bg-transparent border border-solid border-steel-600 hover:bg-steel-600 hover:text-white active:bg-steel-700 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
+                                        type="button" style="transition: all .15s ease">
+                                        Mehr erfahren
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+                            <div
+                                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                                <div class="px-4 py-5 flex-auto">
+                                    <div
+                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-carrot-500">
+                                        <!-- Heroicon name: photo -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="text-xl font-semibold">Umgebung</h6>
+                                    <p class="mt-2 mb-4 text-gray-600">
+                                        Unternehmungen und Ausflugszielen in der Umgebung stellen wir Ihnen hier vor.
+                                    </p>
+                                    <button
+                                        class="text-gray-600 bg-transparent border border-solid border-steel-600 hover:bg-steel-600 hover:text-white active:bg-steel-700 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
+                                        type="button" style="transition: all .15s ease">
+                                        Mehr erfahren
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center mt-32">
+                        <div class="w-full md:w-5/12 px-4 mb-5 mr-auto ml-auto">
+                            <div
+                                class="text-steel-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-sunglow-300">
+                                <!-- Heroicon name: home -->
+                                <svg class="h-6 w-6" mlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl mb-2 font-semibold leading-normal text-steel-50">
+                                Informationen zum Haus
+                            </h3>
+                            <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-steel-50">
+                                Das Só Lazer Caiçara begrüßt Sie in Paraty in der Region Rio de Janeiro, in der Nähe des
+                                Busbahnhofs Praia do Cais und des Busbahnhofs Paraty. Es bietet Ihnen Unterkünfte mit
+                                kostenfreien Privatparkplätzen.
+                            </p>
+                            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-steel-50">
+                                Die klimatisierten Unterkünfte sind mit Fliesenböden ausgestattet und verfügen über ein
+                                eigenes Bad, einen Flachbild-TV, kostenfreies WLAN, einen Kleiderschrank, ein
+                                Wohnzimmer, eine ausgestattete Küche, eine Terrasse und Gartenblick. Alle Unterkünfte
+                                verfügen über einen Sitz- und einen Essbereich.
+                            </p>
+                            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-steel-50">
+                                Das Apartment verfügt über eine Terrasse.
+                            </p>
+                            <a href="http://www.booking.com/Share-Fvkru0" class="font-bold text-sunglow-300 mt-8">Jetzt
+                                buchen</a>
+                        </div>
+                        <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="assets/house.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="relative h-full">
+                <!-- <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+                    style="height: 49px; transform: translateZ(0px);">
+                    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                        <polygon class="fill-current text-steel-600" points="0 0 2560 0 2560 100"></polygon>
+                    </svg>
+                </div> -->
+                <div class="h-full">
+                    <iframe class="w-full h-auto" frameborder="0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD4iE2xVSpkLLOXoyqT-RuPwURN3ddScAI&q=R.+22+de+Abril,+612+-+Jabaquara,+Paraty+-+RJ,+23970-000,+Brasilien"
+                        style="border:0; height:50vh" allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+            <section class="pt-16 pb-32">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-wrap items-center mb-16">
+                        <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+                            <img alt="..." class="max-w-full rounded-lg shadow-lg" src="assets/front.jpg" />
+                        </div>
+                        <div class="w-full md:w-5/12 px-4 mb-5 mr-auto ml-auto">
+                            <h3 class="text-3xl mb-2 font-semibold leading-normal">
+                                Hausregeln
+                            </h3>
+                            <ul class="list-disc">
+                                <li class="text-lg font-light leading-relaxed mt-4 mb-4">
+                                    Parken können sie auf den links eingezeichneten Flächen.
+                                </li>
+                                <li class="text-lg font-light leading-relaxed mt-4 mb-4">
+                                    Mindestens 4 Übernachtungen
+                                </li>
+                                <li class="text-lg font-light leading-relaxed mt-4 mb-4">
+                                    Keine Parties
+                                </li>
+                            </ul>
+                            <a href="http://www.booking.com/Share-Fvkru0" class="font-bold text-sunglow-300 mt-8">Jetzt
+                                buchen</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pb-20 relative block bg-gray-900">
+                <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                    style="height: 80px; transform: translateZ(0px);">
+                    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                        <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    </svg>
+                </div>
+                <div class="container mx-auto px-4 pt-8">
+                    <div class="flex flex-wrap items-center mt-8">
+                        <div class="w-full md:w-5/12 px-4 mb-5 mr-auto ml-auto">
+                            <div
+                                class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-steel-300">
+                                <!-- Heroicon name: camera -->
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl mb-2 font-semibold leading-normal text-steel-50">
+                                Eindrücke
+                            </h3>
+                            <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-steel-50">
+                                Verschiedene Eindrücke der Wohnungen in der Só Lazer Caiçara Pousada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 pb-16 lg:pb-24">
+                    <div class="flex flex-wrap items-center">
+                        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mx-auto p-8">
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/terrace-2.jpeg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/living.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/kitchen.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/dining.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/bedroom.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/bedroom-2.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/bathroom.jpg" />
+                            <img alt="..." class="rounded-lg shadow-lg" src="assets/balcony.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="relative bg-white pt-8 pb-6">
+                <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                    style="height: 80px; transform: translateZ(0px);">
+                    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                        <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    </svg>
+                </div>
+            </section>
+            <section class="pt-16 pb-16">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-wrap items-center mb-16">
+                        <div class="w-full md:w-5/12 px-4 mb-5 mr-auto ml-auto">
+                            <div
+                                class="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-carrot-500">
+                                <!-- Heroicon name: photo -->
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl mb-2 font-semibold leading-normal">
+                                Umgebung
+                            </h3>
+                            <p class="text-lg font-light leading-relaxed mt-4 mb-4">
+                                Eine kleine Auswahl an Ausflugszielen, welche in der Nähe erkundet werden können. Gerne
+                                geben wir Ihnen noch weitere Tipps&Tricks für ein optimales Urlaubserlebnis in Paraty
+                                und Umgebung.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 pb-16 lg:pb-24">
+                    <div class="flex flex-wrap items-center">
+                        <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 mx-auto p-8">
+                            <div class="w-full px-4 mr-auto ml-auto">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                                    <img alt="..." src="assets/beach.jpeg" class="w-full align-middle rounded-t-lg" />
+                                    <blockquote class="relative p-8 mb-4">
+                                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 583 95" class="absolute left-0 w-full block"
+                                            style="height: 95px; top: -94px;">
+                                            <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current">
+                                            </polygon>
+                                        </svg>
+                                        <h4 class="text-xl font-bold text-white">
+                                            Praia do Sono
+                                        </h4>
+                                        <p class="text-md font-light mt-2 text-white">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                                            nulla!
+                                            Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mr-auto ml-auto">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                                    <img alt="..." src="assets/paraty.jpeg" class="w-full align-middle rounded-t-lg" />
+                                    <blockquote class="relative p-8 mb-4">
+                                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 583 95" class="absolute left-0 w-full block"
+                                            style="height: 95px; top: -94px;">
+                                            <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current">
+                                            </polygon>
+                                        </svg>
+                                        <h4 class="text-xl font-bold text-white">
+                                            Paraty Innenstadt
+                                        </h4>
+                                        <p class="text-md font-light mt-2 text-white">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                                            nulla!
+                                            Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mr-auto ml-auto">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                                    <img alt="..." src="assets/bar.jpeg" class="w-full align-middle rounded-t-lg" />
+                                    <blockquote class="relative p-8 mb-4">
+                                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 583 95" class="absolute left-0 w-full block"
+                                            style="height: 95px; top: -94px;">
+                                            <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current">
+                                            </polygon>
+                                        </svg>
+                                        <h4 class="text-xl font-bold text-white">
+                                            Bars
+                                        </h4>
+                                        <p class="text-md font-light mt-2 text-white">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                                            nulla!
+                                            Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mr-auto ml-auto">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                                    <img alt="..." src="assets/church.jpeg" class="w-full align-middle rounded-t-lg" />
+                                    <blockquote class="relative p-8 mb-4">
+                                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 583 95" class="absolute left-0 w-full block"
+                                            style="height: 95px; top: -94px;">
+                                            <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current">
+                                            </polygon>
+                                        </svg>
+                                        <h4 class="text-xl font-bold text-white">
+                                            Kirche
+                                        </h4>
+                                        <p class="text-md font-light mt-2 text-white">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                                            nulla!
+                                            Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="relative bg-gray-300 pt-8 pb-6">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px; transform: translateZ(0px);">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+                        <h5 class="text-lg mt-0 mb-2">
+                            Find us on any of these platforms.
+                        </h5>
+                        <div class="mt-6">
+                            <button
+                                class="font-normal items-center justify-center align-center outline-none focus:outline-none mr-2 p-3"
+                                type="button">
+                                <img alt="..." class="h-8 w-8 max-w-full" src="assets/instagram-icon.svg" />
+                            </button>
+                            <button
+                                class="font-normal items-center justify-center align-center outline-none focus:outline-none mr-2 p-3"
+                                type="button">
+                                <img alt="..." class="max-w-full h-8" src="assets/booking.png" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-6/12 px-4">
+                        <div class="flex flex-wrap items-top mb-6">
+                            <div class="w-full lg:w-4/12 px-4 ml-auto pb-4">
+                                <span class="block uppercase text-steel-900 text-sm font-semibold mb-2">Kontakt</span>
+                                <p class="text-steel-600 text-md font-light mt-2">
+                                    Só Lazer Caiçara
+                                </p>
+                                <p class="text-steel-600 text-md font-light mt-2">
+                                    Anna &amp; Esrom Azevedo Preu&szlig;
+                                    <br>
+                                    Musterstraße 123
+                                    <br>
+                                    123456 Musterstadt
+                                </p>
+                                <p class="text-steel-600 text-md font-light mt-2">
+                                    +49 (0) 123457 45 45
+                                    <br>
+                                    contact@solazercaicara.com
+                                </p>
+                            </div>
+                            <div class="w-full lg:w-4/12 px-4">
+                                <span class="block uppercase text-steel-600 text-sm font-semibold mb-2">Other
+                                    Resources</span>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-steel-600 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                            href="https://creative-tim.com/terms">Terms &amp; Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-steel-600 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                            href="https://creative-tim.com/privacy">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+        function toggleNavbar(collapseID) {
+            document.querySelectorAll(collapseID).forEach(function (e) {
+                e.classList.toggle('hidden');
+                e.classList.toggle('block');
+            });
+        }
+    </script>
+</body>
+
+</html>

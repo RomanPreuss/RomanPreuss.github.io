@@ -1,0 +1,18 @@
+{
+  "name": "ifc-prototype",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "app.js",
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js",
+    "watch": "rollup -w -c ./rollup.config.js"
+  },
+  "dependencies": {
+    "three": "^0.132.2",
+    "web-ifc-three": "^0.0.81"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "rollup": "^2.59.0"
+  }
+}

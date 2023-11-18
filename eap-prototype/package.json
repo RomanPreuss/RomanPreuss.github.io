@@ -1,0 +1,17 @@
+{
+  "name": "eap-prototype",
+  "version": "1.0.0",
+  "description": "EAP Service Industrie Prototype",
+  "scripts": {
+    "serve": "concurrently \"tailwindcss  -i ./src/css/tailwind.css -o ./dist/tailwind.css --minify --watch\"  \"live-server --open=src\"",
+    "start": "npm run serve",
+    "build": "tailwindcss ./src/css/main.css -o ./dist/output.css --minify"
+  },
+  "author": "Roman Preuss",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.3.5"
+  }
+}
